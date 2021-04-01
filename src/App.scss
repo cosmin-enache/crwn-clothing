@@ -1,0 +1,83 @@
+// font sizes
+$sub-title-fs: 1.2em !important;
+$h1-fs: 1.6em !important;
+
+
+h1 {
+    font-size: $h1-fs;
+}
+
+// column padding below
+.row {
+    > div {
+        padding: 8px !important;
+    }
+}
+
+#homePage {
+    > .dirMenu {
+        .menu-item {
+            padding: 60px;
+            border: 2px solid black;
+            width: 100%;
+            &.lg {
+                padding: 100px;
+            }
+            > .content {
+                border: 2px solid black;
+                padding: 20px;
+                max-width: 170px;
+                margin: auto;
+                > .title {
+
+                }
+                > .sub-title {
+                    font-size: $sub-title-fs;
+                    letter-spacing: 2px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    #homePage {
+        > .dirMenu {
+            .menu-item {
+                &.lg {
+                    padding: 60px;
+                }
+                > .content {
+                    > .title {
+
+                    }
+                    > .sub-title {
+                        font-size: $sub-title-fs;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+
+}

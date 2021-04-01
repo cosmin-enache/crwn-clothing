@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
+h1 {
+  font-size: 1.6em !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row > div {
+  padding: 8px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#homePage > .dirMenu .menu-item {
+  padding: 60px;
+  border: 2px solid black;
+  width: 100%;
+}
+#homePage > .dirMenu .menu-item.lg {
+  padding: 100px;
+}
+#homePage > .dirMenu .menu-item > .content {
+  border: 2px solid black;
+  padding: 20px;
+  max-width: 170px;
+  margin: auto;
+}
+#homePage > .dirMenu .menu-item > .content > .sub-title {
+  font-size: 1.2em !important;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  #homePage > .dirMenu .menu-item.lg {
+    padding: 60px;
+  }
+  #homePage > .dirMenu .menu-item > .content > .sub-title {
+    font-size: 1.2em !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*# sourceMappingURL=App.css.map */
