@@ -1,10 +1,15 @@
+* {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
 // font sizes
-$sub-title-fs: 1.2em !important;
-$h1-fs: 1.6em !important;
+$sub-title-fs: 1.4em !important;
+$h1-fs: 2.4em !important;
 
 
 h1 {
     font-size: $h1-fs;
+    font-weight: bold;
 }
 
 // column padding below
@@ -15,19 +20,39 @@ h1 {
 }
 
 #homePage {
-    > .dirMenu {
+    .dirMenu {
+        position: relative;
         .menu-item {
+            position: relative;
             padding: 60px;
             border: 2px solid black;
             width: 100%;
-            &.lg {
-                padding: 100px;
+            overflow: hidden;
+            &:hover {
+                cursor: pointer;
+                > .content {
+                    background: rgba(255, 255, 255, 0.85);
+                }
+                img {
+                    transform: scale(1.2);
+                    transform-origin: center;
+                    transition: 8s;
+                }
+            }
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-height: 100%;
+                height: auto;
+                z-index: -1;
             }
             > .content {
-                border: 2px solid black;
                 padding: 20px;
                 max-width: 170px;
                 margin: auto;
+                background: rgba(255, 255, 255, 0.65);
                 > .title {
 
                 }
@@ -49,7 +74,7 @@ h1 {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     #homePage {
-        > .dirMenu {
+        .dirMenu {
             .menu-item {
                 &.lg {
                     padding: 60px;
@@ -69,15 +94,88 @@ h1 {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+    #homePage {
+        .dirMenu {
+            .menu-item {
+                height: 340px;
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+                &.lg {
+                    height: 440px;
+                    padding: 100px;
+                }
+                > .content {
+                    position: relative;
+                    padding: 30px 20px 30px 20px;
+                    top: calc(50% - 55px);
+                    > .title {
 
+                    }
+                    > .sub-title {
+                        font-size: $sub-title-fs;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+    #homePage {
+        .dirMenu {
+            .menu-item {
 
+                img {
+                    height: auto;
+                    width: 100%;
+                }
+                &.lg {
+
+                }
+                > .content {
+
+                    > .title {
+
+                    }
+                    > .sub-title {
+                        font-size: $sub-title-fs;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) {
 
+}
+
+@media (min-width: 1900px) {
+    #homePage {
+        .dirMenu {
+            .menu-item {
+                height: 500px;
+                img {
+                    height: auto;
+                    width: 100%;
+                }
+                &.lg {
+                    height: 700px;
+                }
+                > .content {
+
+                    > .title {
+
+                    }
+                    > .sub-title {
+                        font-size: $sub-title-fs;
+                    }
+                }
+            }
+        }
+    }
 }

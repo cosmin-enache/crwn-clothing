@@ -1,37 +1,109 @@
+* {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
 h1 {
-  font-size: 1.6em !important;
+  font-size: 2.4em !important;
+  font-weight: bold;
 }
 
 .row > div {
   padding: 8px !important;
 }
 
-#homePage > .dirMenu .menu-item {
+#homePage .dirMenu {
+  position: relative;
+}
+#homePage .dirMenu .menu-item {
+  position: relative;
   padding: 60px;
   border: 2px solid black;
   width: 100%;
+  overflow: hidden;
 }
-#homePage > .dirMenu .menu-item.lg {
-  padding: 100px;
+#homePage .dirMenu .menu-item:hover {
+  cursor: pointer;
 }
-#homePage > .dirMenu .menu-item > .content {
-  border: 2px solid black;
+#homePage .dirMenu .menu-item:hover > .content {
+  background: rgba(255, 255, 255, 0.85);
+}
+#homePage .dirMenu .menu-item:hover img {
+  transform: scale(1.2);
+  transform-origin: center;
+  transition: 8s;
+}
+#homePage .dirMenu .menu-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  z-index: -1;
+}
+#homePage .dirMenu .menu-item > .content {
   padding: 20px;
   max-width: 170px;
   margin: auto;
+  background: rgba(255, 255, 255, 0.65);
 }
-#homePage > .dirMenu .menu-item > .content > .sub-title {
-  font-size: 1.2em !important;
+#homePage .dirMenu .menu-item > .content > .sub-title {
+  font-size: 1.4em !important;
   letter-spacing: 2px;
   font-weight: 400;
 }
 
 @media (min-width: 768px) {
-  #homePage > .dirMenu .menu-item.lg {
+  #homePage .dirMenu .menu-item.lg {
     padding: 60px;
   }
-  #homePage > .dirMenu .menu-item > .content > .sub-title {
-    font-size: 1.2em !important;
+  #homePage .dirMenu .menu-item > .content > .sub-title {
+    font-size: 1.4em !important;
+  }
+}
+@media (min-width: 992px) {
+  #homePage .dirMenu .menu-item {
+    height: 340px;
+  }
+  #homePage .dirMenu .menu-item img {
+    height: 100%;
+    width: auto;
+  }
+  #homePage .dirMenu .menu-item.lg {
+    height: 440px;
+    padding: 100px;
+  }
+  #homePage .dirMenu .menu-item > .content {
+    position: relative;
+    padding: 30px 20px 30px 20px;
+    top: calc(50% - 55px);
+  }
+  #homePage .dirMenu .menu-item > .content > .sub-title {
+    font-size: 1.4em !important;
+  }
+}
+@media (min-width: 1200px) {
+  #homePage .dirMenu .menu-item img {
+    height: auto;
+    width: 100%;
+  }
+  #homePage .dirMenu .menu-item > .content > .sub-title {
+    font-size: 1.4em !important;
+  }
+}
+@media (min-width: 1900px) {
+  #homePage .dirMenu .menu-item {
+    height: 500px;
+  }
+  #homePage .dirMenu .menu-item img {
+    height: auto;
+    width: 100%;
+  }
+  #homePage .dirMenu .menu-item.lg {
+    height: 700px;
+  }
+  #homePage .dirMenu .menu-item > .content > .sub-title {
+    font-size: 1.4em !important;
   }
 }
 
