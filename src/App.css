@@ -85,7 +85,7 @@ h1 {
 @media (min-width: 1200px) {
   #homePage .dirMenu .menu-item img {
     height: auto;
-    width: 100%;
+    width: 101%;
   }
   #homePage .dirMenu .menu-item > .content > .sub-title {
     font-size: 1.4em !important;
@@ -94,10 +94,6 @@ h1 {
 @media (min-width: 1900px) {
   #homePage .dirMenu .menu-item {
     height: 500px;
-  }
-  #homePage .dirMenu .menu-item img {
-    height: auto;
-    width: 100%;
   }
   #homePage .dirMenu .menu-item.lg {
     height: 700px;

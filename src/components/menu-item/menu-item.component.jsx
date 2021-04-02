@@ -1,7 +1,8 @@
-import React from "react"
-import { Col } from "react-bootstrap"
+import React from "react";
+import { Col } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
 
-const MenuItem = ({ title, layoutLarge, imageUrl }) => {
+const MenuItem = ({ title, layoutLarge, imageUrl, history, linkUrl }) => {
     return (
         <Col
             md={6}
@@ -9,6 +10,7 @@ const MenuItem = ({ title, layoutLarge, imageUrl }) => {
             className="text-center"
         >
             <div
+                onClick={() => history.push(linkUrl)}
                 className={`menu-item ${layoutLarge && "lg"}`}
             >
                 <img src={imageUrl} />
@@ -21,4 +23,4 @@ const MenuItem = ({ title, layoutLarge, imageUrl }) => {
     );
 };
 
-export default MenuItem;
+export default withRouter(MenuItem);

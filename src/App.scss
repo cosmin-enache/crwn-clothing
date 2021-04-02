@@ -110,9 +110,6 @@ h1 {
                     position: relative;
                     padding: 30px 20px 30px 20px;
                     top: calc(50% - 55px);
-                    > .title {
-
-                    }
                     > .sub-title {
                         font-size: $sub-title-fs;
                     }
@@ -127,19 +124,11 @@ h1 {
     #homePage {
         .dirMenu {
             .menu-item {
-
                 img {
                     height: auto;
-                    width: 100%;
-                }
-                &.lg {
-
+                    width: 101%;
                 }
                 > .content {
-
-                    > .title {
-
-                    }
                     > .sub-title {
                         font-size: $sub-title-fs;
                     }
@@ -159,18 +148,10 @@ h1 {
         .dirMenu {
             .menu-item {
                 height: 500px;
-                img {
-                    height: auto;
-                    width: 100%;
-                }
                 &.lg {
                     height: 700px;
                 }
                 > .content {
-
-                    > .title {
-
-                    }
                     > .sub-title {
                         font-size: $sub-title-fs;
                     }
