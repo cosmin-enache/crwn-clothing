@@ -13,6 +13,20 @@ h1 {
 .padMeMore {
   padding: 24px !important; }
 
+.navbar {
+  margin: 20px; }
+  .navbar .nav-logo {
+    width: 80px;
+    height: auto; }
+  .navbar .nav-item {
+    font-size: 2em !important;
+    color: black;
+    padding: 10px;
+    margin: 10px; }
+    .navbar .nav-item:hover {
+      opacity: 0.65;
+      text-decoration: none; }
+
 #shopPage .sp-title {
   font-size: 3.3em !important;
   font-weight: bold; }
