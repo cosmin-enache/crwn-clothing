@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import HomePage from './pages/homepage/homepage.component.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route } from "react-router-dom";
+
+import HomePage from './pages/homepage/homepage.component.jsx';
+import ShopPage from './pages/shop/shop.component.jsx';
 
 const HatsPage = (props) => {
     return (
@@ -16,7 +18,7 @@ function App() {
         <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/hats" component={HatsPage} />
-            <Route path="/hats/:hatId" component={HatsPage} />
+            <Route exact path="/shop" component={ShopPage} />
         </Switch>
     </Fragment>
   );

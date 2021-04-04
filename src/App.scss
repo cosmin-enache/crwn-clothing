@@ -4,7 +4,10 @@
 
 // font sizes
 $sub-title-fs: 1.4em !important;
+$span-fs: 1.6em !important;
 $h1-fs: 2.4em !important;
+$h1-xtra-fs: 3em !important;
+$h1-xxtra-fs: 3.3em !important;
 
 
 h1 {
@@ -12,11 +15,70 @@ h1 {
     font-weight: bold;
 }
 
+
 // column padding below
 .row {
     > div {
         padding: 8px !important;
     }
+    .padMore {
+        padding: 24px !important;
+    }
+}
+
+.padMeMore {
+  padding: 24px !important;
+}
+
+#shopPage {
+  .sp-title {
+    font-size: $h1-xxtra-fs;
+    font-weight: bold;
+  }
+  .collection-preview {
+    display: block;
+    position: relative;
+    .preview-title {
+      font-size: $h1-xtra-fs;
+    }
+
+  }
+  .collection-item {
+    display: inline-block;
+    width: 100%;
+    > .bg-img-container {
+      height: 400px;
+      overflow: hidden;
+      > .bg-img {
+        min-height: 400px;
+        min-width: 100%;
+      }
+      > button {
+        display: block !important;
+        position: absolute;
+        left: 15%;
+        bottom: 18%;
+        width: 70%;
+        background: rgba(255, 255, 255, 0.7);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: $h1-fs;
+        outline: none !important;
+        border: 2px solid black !important;
+        &:active {
+          background: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+    > .name {
+      font-size: $span-fs;
+      float: left;
+    }
+    > .price {
+      font-size: $span-fs;
+      float: right;
+    }
+  }
 }
 
 #homePage {
@@ -68,11 +130,77 @@ h1 {
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-
+  $span-fs: 2em !important;
+  $h1-xtra-fs: 3em !important;
+  #shopPage {
+    .collection-preview {
+      .preview-title {
+        font-size: $h1-xtra-fs;
+      }
+    }
+    .collection-item {
+      display: inline-block;
+      width: 100%;
+      > .bg-img-container {
+        height: 600px;
+        overflow: hidden;
+        > .bg-img {
+          min-height: 100% !important;
+          width: auto;
+        }
+        > button {
+          display: block !important;
+        }
+      }
+      > .name {
+        font-size: $span-fs;
+      }
+      > .price {
+        font-size: $span-fs;
+      }
+    }
+  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+    $span-fs: 1.8em !important;
+    $h1-xtra-fs: 2.7em !important;
+    #shopPage {
+      .collection-preview {
+        .preview-title {
+          font-size: $h1-xtra-fs;
+        }
+      }
+      .collection-item {
+        display: inline-block;
+        width: 100%;
+        > .bg-img-container {
+          height: 350px;
+          overflow: hidden;
+          &:hover {
+            button {
+              display: block !important;
+            }
+          }
+          > .bg-img {
+            position: relative;
+            min-height: 100% !important;
+            width: auto;
+          }
+          > button {
+            display: none !important;
+            z-index: 1;
+          }
+        }
+        > .name {
+          font-size: $span-fs;
+        }
+        > .price {
+          font-size: $span-fs;
+        }
+      }
+    }
     #homePage {
         .dirMenu {
             .menu-item {
@@ -144,6 +272,35 @@ h1 {
 }
 
 @media (min-width: 1900px) {
+    $span-fs: 2.4em !important;
+    $h1-xtra-fs: 3em !important;
+    #shopPage {
+      .collection-preview {
+        .preview-title {
+          font-size: $h1-xtra-fs;
+        }
+      }
+      .collection-item {
+        display: inline-block;
+        width: 100%;
+        > .bg-img-container {
+          height: 650px;
+          overflow: hidden;
+          > .bg-img {
+            min-height: 100% !important;
+            width: auto;
+          }
+        }
+        > .name {
+          font-size: $span-fs;
+          float: left;
+        }
+        > .price {
+          font-size: $span-fs;
+          float: right;
+        }
+      }
+    }
     #homePage {
         .dirMenu {
             .menu-item {
