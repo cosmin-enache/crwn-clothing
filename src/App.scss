@@ -5,6 +5,7 @@
 // font sizes
 $sub-title-fs: 1.4em !important;
 $span-fs: 1.6em !important;
+$span-sm-fs: 1.2em !important;
 $nav-item-fs: 2em !important;
 $h1-fs: 2.4em !important;
 $h1-xtra-fs: 3em !important;
@@ -31,6 +32,21 @@ h1 {
   padding: 24px !important;
 }
 
+.styled-button {
+  width: 45%;
+}
+
+.full-vh {
+  height: 100vh !important;
+}
+
+.input-group {
+  .form-input-label {
+    position: absolute;
+    left: 2px;
+  }
+}
+
 .navbar {
   margin: 20px;
   .nav-logo {
@@ -46,6 +62,34 @@ h1 {
       opacity: 0.65;
       text-decoration: none;
     }
+  }
+}
+
+#authPage {
+  .row {
+    height: 70vh;
+  }
+  h2 {
+    font-size: $h1-xtra-fs;
+    + span {
+      display: block;
+      margin-bottom: 40px;
+      font-size: $span-fs;
+      color: grey;
+    }
+  }
+  .text-muted {
+    font-size: $span-sm-fs;
+  }
+}
+
+#sign-in-form {
+  .field-label {
+    font-size: $span-fs;
+  }
+  .styled-button {
+    margin-top: 40px;
+    font-size: $span-fs;
   }
 }
 

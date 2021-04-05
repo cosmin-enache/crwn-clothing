@@ -13,6 +13,16 @@ h1 {
 .padMeMore {
   padding: 24px !important; }
 
+.styled-button {
+  width: 45%; }
+
+.full-vh {
+  height: 100vh !important; }
+
+.input-group .form-input-label {
+  position: absolute;
+  left: 2px; }
+
 .navbar {
   margin: 20px; }
   .navbar .nav-logo {
@@ -26,6 +36,24 @@ h1 {
     .navbar .nav-item:hover {
       opacity: 0.65;
       text-decoration: none; }
+
+#authPage .row {
+  height: 70vh; }
+#authPage h2 {
+  font-size: 3em !important; }
+  #authPage h2 + span {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 1.6em !important;
+    color: grey; }
+#authPage .text-muted {
+  font-size: 1.2em !important; }
+
+#sign-in-form .field-label {
+  font-size: 1.6em !important; }
+#sign-in-form .styled-button {
+  margin-top: 40px;
+  font-size: 1.6em !important; }
 
 #shopPage .sp-title {
   font-size: 3.3em !important;
