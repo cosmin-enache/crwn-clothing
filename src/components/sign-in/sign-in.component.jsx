@@ -1,5 +1,7 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
+import GoogleAuthButton from "../google-auth-button/google-auth-button.component.jsx";
+import { signInWithGoogle } from "../../firebase/firebase.utils.js";
 
 class SignIn extends React.Component {
     constructor() {
@@ -24,6 +26,10 @@ class SignIn extends React.Component {
         const { name, value } = event.target;
 
         this.setState({ [name]: value });
+    }
+
+    gHandleClick = event => {
+        signInWithGoogle();
     }
 
     render() {
@@ -62,9 +68,7 @@ class SignIn extends React.Component {
                         <Button className="styled-button" size="lg" variant="dark" type="submit">
                             SIGN IN
                         </Button>
-                        <Button className="styled-button google" variant="primary" size="lg" type="submit">
-                            GOOGLE SIGN IN
-                        </Button>
+                        <GoogleAuthButton gHandleClick={this.gHandleClick} />
                     </Form>
                 </div>
             </React.Fragment>

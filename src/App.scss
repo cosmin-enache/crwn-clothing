@@ -1,5 +1,6 @@
 * {
     font-family: 'Open Sans Condensed', sans-serif;
+    box-sizing: border-box;
 }
 
 // font sizes
@@ -88,6 +89,7 @@ h1 {
   .styled-button {
       display: block;
       position: relative;
+      padding: 8px 30px 8px 30px;
       width: 100%;
   }
 }
