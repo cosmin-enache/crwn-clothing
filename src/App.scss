@@ -81,6 +81,15 @@ h1 {
   .text-muted {
     font-size: $span-sm-fs;
   }
+  .sign-up-container {
+      position: relative;
+      top: 127px;
+  }
+  .styled-button {
+      display: block;
+      position: relative;
+      width: 100%;
+  }
 }
 
 #sign-in-form {
@@ -195,6 +204,16 @@ h1 {
 @media (min-width: 576px) {
   $span-fs: 2em !important;
   $h1-xtra-fs: 3em !important;
+  #authPage {
+    .styled-button {
+        display: inline-block;
+        position: relative;
+        width: 45%;
+        &.google {
+            float: right;
+        }
+    }
+  }
   #shopPage {
     .collection-preview {
       .preview-title {

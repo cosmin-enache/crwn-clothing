@@ -48,6 +48,13 @@ h1 {
     color: grey; }
 #authPage .text-muted {
   font-size: 1.2em !important; }
+#authPage .sign-up-container {
+  position: relative;
+  top: 127px; }
+#authPage .styled-button {
+  display: block;
+  position: relative;
+  width: 100%; }
 
 #sign-in-form .field-label {
   font-size: 1.6em !important; }
@@ -128,6 +135,13 @@ h1 {
         font-weight: 400; }
 
 @media (min-width: 576px) {
+  #authPage .styled-button {
+    display: inline-block;
+    position: relative;
+    width: 45%; }
+    #authPage .styled-button.google {
+      float: right; }
+
   #shopPage .collection-preview .preview-title {
     font-size: 3em !important; }
   #shopPage .collection-item {
