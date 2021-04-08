@@ -8,7 +8,7 @@ import HomePage from './pages/homepage/homepage.component.jsx';
 import ShopPage from './pages/shop/shop.component.jsx';
 import AuthPage from './pages/authentication/authentication.component.jsx'
 
-import { auth } from "./firebase/firebase.utils.js";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils.js";
 
 const HatsPage = (props) => {
     return (
@@ -28,7 +28,7 @@ class App extends Component {
     componentDidMount() {
         auth.onAuthStateChanged(user => {
             if (user) {
-                this.setState({ currentUser: user });
+                createUserProfileDocument(user);
             } else {
                 this.setState({ currentUser: null });
             }
