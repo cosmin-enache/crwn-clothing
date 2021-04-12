@@ -1,25 +1,39 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import GoogleAuthButton from "../google-auth-button/google-auth-button.component.jsx";
-import { signInWithGoogle } from "../../firebase/firebase.utils.js";
+import { auth, signInWithGoogle, signInWithEmailAndPassword } from "../../firebase/firebase.utils.js";
+import { withRouter } from "react-router-dom";
 
 class SignIn extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             email: "",
             password: ""
         };
+
+        this.history = props.history;
+
+        this.emptyState = { ...this.state };
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
 
-        this.setState({
-            email: "",
-            password: ""
-        });
+        const { email, password } = this.state;
+
+        const signInSuccess = await signInWithEmailAndPassword(email, password);
+
+        if (signInSuccess) {
+            alert("Sign in successful!");
+
+            this.setState({ ...this.emptyState });
+
+            this.history.push("/");
+        } else {
+            alert("Wrong email / password !");
+        }
     }
 
     handleChange = event => {
@@ -28,8 +42,12 @@ class SignIn extends React.Component {
         this.setState({ [name]: value });
     }
 
-    gHandleClick = event => {
-        signInWithGoogle();
+    gHandleClick = async event => {
+        await signInWithGoogle();
+
+        alert("Signed in successfully!");
+
+        this.history.push("/");
     }
 
     render() {
@@ -76,4 +94,4 @@ class SignIn extends React.Component {
     }
 }
 
-export default SignIn;
+export default withRouter(SignIn);

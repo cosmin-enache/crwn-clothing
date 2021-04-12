@@ -20,19 +20,33 @@ class App extends Component {
     constructor() {
         super();
 
+        this.handleAuthSubscription = null;
+
         this.state = {
             currentUser: null
         };
     }
 
     componentDidMount() {
-        auth.onAuthStateChanged(user => {
+        this.handleAuthSubscription = auth.onAuthStateChanged(async user => {
             if (user) {
-                createUserProfileDocument(user);
+                const userRef = await createUserProfileDocument(user);
+                const userSnapshot = await userRef.get();
+
+                const { id } = userSnapshot;
+
+                await this.setState({ currentUser: {
+                    id: id,
+                    ...userSnapshot.data()
+                }});
             } else {
                 this.setState({ currentUser: null });
             }
         });
+    }
+
+    componentWillUnmount() {
+        this.handleAuthSubscription();
     }
 
     render() {

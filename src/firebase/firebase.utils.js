@@ -22,7 +22,7 @@ export const createUserProfileDocument = async (userAuthObject, ...otherData) =>
 
     const userRef = firestore.doc(`users/${userAuthObject.uid}`);
 
-    const snapShot = await userRef.get(userRef);
+    const snapShot = await userRef.get();
 
     if (!snapShot.exists) {
         const { displayName, email } = userAuthObject;
@@ -48,5 +48,17 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({prompt: 'select_account'});
 
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
+export const signInWithEmailAndPassword = async (email, password) => {
+    try {
+        await auth.signInWithEmailAndPassword(email, password);
+
+        return true;
+    } catch (error) {
+        console.log(error);
+
+        return false;
+    }
+};
 
 export default firebase;

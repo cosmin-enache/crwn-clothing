@@ -1,9 +1,11 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
+import { auth, createUserProfileDocument, signInWithEmailAndPassword } from "../../firebase/firebase.utils.js";
+import { withRouter } from "react-router-dom";
 
 class SignUp extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             username: '',
@@ -12,15 +14,37 @@ class SignUp extends React.Component {
             confirmPassword: ''
         };
 
-        this.emptyState = this.state.slice;
+        this.history = props.history;
+
+        this.emptyState = { ...this.state };
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
 
-        const emptyState = this.emptyState;
+        const { username, email, password, confirmPassword } = this.state;
 
-        this.setState({ emptyState });
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        try {
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+            const userData = { ...user, displayName: username };
+
+            await createUserProfileDocument(userData);
+
+            await signInWithEmailAndPassword(email, password);
+
+            this.setState({ ...this.emptyState });
+
+            alert("Account successfully created!");
+
+            this.history.push("/");
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     handleChange = event => {
@@ -101,4 +125,4 @@ class SignUp extends React.Component {
     }
 }
 
-export default SignUp;
+export default withRouter(SignUp);
