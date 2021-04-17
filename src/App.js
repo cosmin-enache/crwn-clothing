@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./components/header/header.component.jsx";
 
 import HomePage from './pages/homepage/homepage.component.jsx';
@@ -10,7 +10,7 @@ import AuthPage from './pages/authentication/authentication.component.jsx'
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils.js";
 
-import setCurrentUser from "./redux/user/user-action.js";
+import  { setCurrentUser } from "./redux/user/user-action.js";
 import { connect } from "react-redux";
 
 class App extends Component {
@@ -50,13 +50,17 @@ class App extends Component {
                 <Header />
                 <Switch>
                     <Route exact path="/" component={HomePage} />
-                    <Route exact path="/shop" component={ShopPage} />
-                    <Route exact path="/user-auth" component={AuthPage} />
+                    <Route exact path="/shop" render={() => <ShopPage />} />
+                    <Route exact path="/user-auth" render={() => this.props.currentUser ? <Redirect to="/" /> : <AuthPage />} />
                 </Switch>
             </Fragment>
         );
     }
 }
+
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+});
 
 const mapDispatchToProps = dispatch => ({
     setCurrentUser: user => dispatch(setCurrentUser(user))

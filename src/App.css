@@ -24,16 +24,74 @@ h1 {
   position: absolute;
   left: 2px; }
 
+.cart-item .img-container {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  overflow: hidden;
+  height: 95px; }
+  .cart-item .img-container img {
+    width: 100%;
+    min-height: 95px; }
+.cart-item .item-details {
+  position: relative;
+  width: 100%;
+  display: inline-block; }
+  .cart-item .item-details * {
+    display: inline-block;
+    font-size: 22px !important; }
+
+.cart-dropdown {
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  border: 2px solid black;
+  background: white;
+  padding: 25px;
+  width: 300px;
+  height: 400px;
+  z-index: 10; }
+  .cart-dropdown .cart-items {
+    position: relative;
+    overflow-y: scroll;
+    width: 100%;
+    height: 268px; }
+  .cart-dropdown button {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    font-size: 1.6em !important;
+    top: 18px; }
+
+.cart-icon {
+  position: relative;
+  top: 24px;
+  left: 13px;
+  cursor: pointer;
+  height: 34px; }
+  .cart-icon .cart-icon-svg {
+    position: relative;
+    width: 30px;
+    height: 30px; }
+  .cart-icon .item-count {
+    text-align: center;
+    width: 23px;
+    position: absolute;
+    top: 7.5px;
+    left: 3px;
+    font-weight: bold;
+    font-size: 16px; }
+
 .navbar {
   margin: 20px; }
   .navbar .nav-logo {
     width: 80px;
     height: auto; }
   .navbar .nav-item {
-    font-size: 2em !important;
+    font-size: 1.8em !important;
     color: black;
     padding: 10px;
-    margin: 10px; }
+    margin: 10px 15px 10px 15px; }
     .navbar .nav-item:hover {
       opacity: 0.65;
       text-decoration: none; }
@@ -92,9 +150,14 @@ h1 {
       padding-bottom: 15px;
       font-size: 2.4em !important;
       outline: none !important;
-      border: 2px solid black !important; }
+      border: 2px solid black !important;
+      transition: 0.25s; }
       #shopPage .collection-item > .bg-img-container > button:active {
-        background: rgba(255, 255, 255, 0.5); }
+        opacity: 0.5; }
+      #shopPage .collection-item > .bg-img-container > button:hover {
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+        transition: 0.45s; }
   #shopPage .collection-item > .name {
     font-size: 1.6em !important;
     float: left; }

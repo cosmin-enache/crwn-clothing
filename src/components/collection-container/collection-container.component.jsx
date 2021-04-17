@@ -5,7 +5,7 @@ import Collection from "../collection/collection.component.jsx"
 class CollectionContainer extends React.Component {
   constructor() {
     super();
-
+    console.log(SHOP_DATA);
     this.state = {
       collections: SHOP_DATA
     };
@@ -16,8 +16,9 @@ class CollectionContainer extends React.Component {
     return (
       <React.Fragment>
         {
-          collections.map(({ id, ...otherProps }) => (
-            <Collection key={id} {...otherProps} />
+          collections.map(props => (
+
+            <Collection key={props.id} {...props} />
           ))
         }
       </React.Fragment>

@@ -9,9 +9,9 @@ const Collection = ({ title, items }) => (
         <h1 className="preview-title">{title.toUpperCase()}</h1>
       </Col>
       {
-        items.reduce((a, { id, ...otherProps }, i) => {
+        items.reduce((a, props, i) => {
           i < 4 && a.push(
-            <CollectionItem key={id} {...otherProps} />
+            <CollectionItem key={props.id} {...props} />
           );
           return a;
         }, [])
