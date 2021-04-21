@@ -134,6 +134,8 @@ h1 {
   font-size: 3.3em !important;
   font-weight: bold; }
 
+#checkoutPage .header-total {
+  border-top: 2px solid #DEE2E6; }
 #checkoutPage .checkout-header {
   margin: auto; }
   #checkoutPage .checkout-header .checkout-product-img-container {
@@ -174,7 +176,7 @@ h1 {
         left: 58px; }
       #checkoutPage .checkout-header td .quantity-wrapper .quantity-increase {
         content: "\203A";
-        left: 108px; }
+        left: 107px; }
   #checkoutPage .checkout-header th {
     text-align: left;
     font-size: 1.8em;

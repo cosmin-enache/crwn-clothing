@@ -191,6 +191,9 @@ h1 {
 }
 
 #checkoutPage {
+    .header-total {
+        border-top: 2px solid #DEE2E6;
+    }
     .checkout-header {
         margin: auto;
         .checkout-product-img-container {
@@ -203,6 +206,7 @@ h1 {
                 height: auto;
             }
         }
+
         td {
             position: relative;
             top: 50%;
@@ -241,7 +245,7 @@ h1 {
                 }
                 .quantity-increase {
                     content: "\203A";
-                    left: 108px;
+                    left: 107px;
                 }
             }
 

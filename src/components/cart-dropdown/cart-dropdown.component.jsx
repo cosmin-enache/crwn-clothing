@@ -4,8 +4,9 @@ import { connect } from "react-redux";
 import CartItem from "../cart-item/cart-item.component.jsx";
 import { Container } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
+import { toggleCartHidden } from "../../redux/cart/cart-action.js";
 
-const CartDropdown = ({ cartItems, history }) => (
+const CartDropdown = ({ cartItems, history, toggleCartHidden }) => (
     <div className="cart-dropdown">
         {
             cartItems.length ? (
@@ -15,7 +16,12 @@ const CartDropdown = ({ cartItems, history }) => (
                     </Container>
                     <Button
                         variant="dark"
-                        onClick={ () => history.push("/checkout") }
+                        onClick={
+                            () => {
+                                toggleCartHidden();
+                                history.push("/checkout");
+                            }
+                        }
                         >GO TO CHECKOUT</Button>
                 </React.Fragment>
             ) : (
@@ -29,4 +35,8 @@ const mapStateToProps = state => ({
     cartItems: state.cart.cartItems
 });
 
-export default withRouter(connect(mapStateToProps)(CartDropdown));
+const mapDispatchToProps = dispatch => ({
+    toggleCartHidden: toggle => dispatch(toggleCartHidden(toggle))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CartDropdown));
