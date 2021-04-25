@@ -49,8 +49,24 @@ export const handleRemoveItemFromCart = (cartItems, cartItemCount, itemToRemove)
 
     const returnObj = {
         cartItems: newCartItems,
-        cartItemCount: cartItemCount - itemToRemove.quantity
+        cartItemCount: newCartItems.reduce((a, item) => a + item.quantity, 0)
     };
 
     return returnObj;
 };
+
+export const saveCartItemsLocally = cartItems => {
+    const cartItemData = JSON.stringify(cartItems);
+
+    try {
+        localStorage.setItem("cartItems", cartItemData);
+    } catch (error) {
+        alert("Save failed!", error.message);
+    }
+};
+
+export const loadCartItemsFromLocal = () => {
+    return JSON.parse(
+        localStorage.getItem("cartItems")
+    );
+}
