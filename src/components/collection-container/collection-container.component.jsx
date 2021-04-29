@@ -1,29 +1,34 @@
 import React from "react";
-import SHOP_DATA from "./shop.data.js";
 import Collection from "../collection/collection.component.jsx"
+import { connect } from "react-redux";
 
-class CollectionContainer extends React.Component {
-  constructor() {
-    super();
-    console.log(SHOP_DATA);
-    this.state = {
-      collections: SHOP_DATA
-    };
-  }
-  render() {
-    const { collections } = this.state;
+const CollectionContainer = ({ collections, match }) => {
+    const { collectionId } = match.params;
+    let foundCollection;
 
-    return (
-      <React.Fragment>
-        {
-          collections.map(props => (
+    if (collectionId) {
+        foundCollection = collections.find(collection => collection.title.toLowerCase() === collectionId)
+    }
 
-            <Collection key={props.id} {...props} />
-          ))
-        }
-      </React.Fragment>
+    return(
+        <React.Fragment>
+            {
+                foundCollection ? (
+                    [ foundCollection ].map(props => (
+                        <Collection key={props.id} {...props} />
+                    ))
+                ) : (
+                    collections.map(props => (
+                        <Collection key={props.id} {...props} />
+                    ))
+                )
+            }
+        </React.Fragment>
     );
-  }
 }
 
-export default CollectionContainer;
+const mapStateToProps = state => ({
+    collections: state.shop.collections
+});
+
+export default connect(mapStateToProps)(CollectionContainer);
