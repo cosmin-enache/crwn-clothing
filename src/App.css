@@ -175,7 +175,7 @@ h1 {
       position: relative; }
       #checkoutPage .checkout-header td .quantity-wrapper .quantity {
         position: relative;
-        left: 3px; }
+        left: 8px !important; }
       #checkoutPage .checkout-header td .quantity-wrapper .quantity-decrease, #checkoutPage .checkout-header td .quantity-wrapper .quantity-increase {
         position: absolute;
         top: 49px;
