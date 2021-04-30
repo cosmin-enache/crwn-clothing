@@ -44,12 +44,11 @@ export const handleReduceItemFromCart = (cartItems, itemToRemove) => {
     }
 };
 
-export const handleRemoveItemFromCart = (cartItems, cartItemCount, itemToRemove) => {
+export const handleRemoveItemFromCart = (cartItems, itemToRemove) => {
     const newCartItems = cartItems.filter(item => item.id !== itemToRemove.id);
 
     const returnObj = {
-        cartItems: newCartItems,
-        cartItemCount: newCartItems.reduce((a, item) => a + item.quantity, 0)
+        cartItems: newCartItems
     };
 
     return returnObj;

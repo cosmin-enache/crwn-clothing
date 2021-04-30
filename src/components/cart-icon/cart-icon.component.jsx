@@ -2,7 +2,9 @@ import React from "react";
 import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
 import { connect } from "react-redux";
 
-const CartIcon = ({ iconClick, cartItemCount }) => {
+const CartIcon = ({ iconClick, cartItems }) => {
+    const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
     return (
         <div onClick={iconClick} className="cart-icon">
             <ShoppingIcon className="cart-icon-svg"/>
@@ -12,7 +14,7 @@ const CartIcon = ({ iconClick, cartItemCount }) => {
 }
 
 const mapStateToProps = state => ({
-    cartItemCount: state.cart.cartItemCount
+    cartItems: state.cart.cartItems
 });
 
 export default connect(mapStateToProps)(CartIcon);

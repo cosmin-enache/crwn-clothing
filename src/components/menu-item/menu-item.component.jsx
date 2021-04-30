@@ -10,7 +10,7 @@ const MenuItem = ({ title, layoutLarge, imageUrl, history, linkUrl }) => {
             className="text-center"
         >
             <div
-                onClick={() => history.push(linkUrl)}
+                onClick={() => history.push("/shop/" + linkUrl)}
                 className={`menu-item ${layoutLarge && "lg"}`}
             >
                 <img src={imageUrl} />

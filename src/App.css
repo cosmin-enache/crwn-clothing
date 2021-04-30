@@ -24,6 +24,17 @@ h1 {
   position: absolute;
   left: 2px; }
 
+.StripeCheckout {
+  float: right;
+  position: relative;
+  top: 20px;
+  margin-bottom: 50px !important; }
+
+.test-card-warning {
+  color: red;
+  font-size: 32px;
+  margin: 40px 0px 40px 0px; }
+
 .cart-item .img-container {
   position: relative;
   display: inline-block;

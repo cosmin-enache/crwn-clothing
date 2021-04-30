@@ -12,7 +12,6 @@ let initialCartItems = loadCartItemsFromLocal() || [];
 const INITIAL_STATE = {
     dropdownHidden: true,
     cartItems: initialCartItems,
-    cartItemCount: initialCartItems.reduce((a, item) => a + item.quantity, 0),
     totalCost: cartItems => cartItems.reduce((total, item) => {
         total += item.quantity * item.price;
 
@@ -30,7 +29,6 @@ const cartReducer = (state=INITIAL_STATE, { type, payload }) => {
         const newState = {
             ...state,
             cartItems: handleAddItemToCart(state.cartItems, payload),
-            cartItemCount: state.cartItems.reduce((a, item) => a + item.quantity, 0)
         };
 
         saveCartItemsLocally(newState.cartItems);
@@ -40,7 +38,6 @@ const cartReducer = (state=INITIAL_STATE, { type, payload }) => {
         const newState2 = {
             ...state,
             cartItems: handleReduceItemFromCart(state.cartItems, payload),
-            cartItemCount: state.cartItems.reduce((a, item) => a + item.quantity, 0)
         };
 
         saveCartItemsLocally(newState2.cartItems);
@@ -48,19 +45,26 @@ const cartReducer = (state=INITIAL_STATE, { type, payload }) => {
         return newState2;
     } else if (type === cartTypes.REMOVE_ITEM_FROM_CART) {
         const {
-            cartItems,
-            cartItemCount
-        } = handleRemoveItemFromCart(state.cartItems, state.cartItemCount, payload);
+            cartItems
+        } = handleRemoveItemFromCart(state.cartItems, payload);
 
         const newState3 = {
             ...state,
-            cartItems,
-            cartItemCount
+            cartItems
         };
 
         saveCartItemsLocally(newState3.cartItems);
 
         return newState3;
+    } else if (type === cartTypes.CLEAR_CART_ITEMS) {
+        const newState4 = {
+            ...state,
+            cartItems: [],
+        };
+
+        saveCartItemsLocally(newState4.cartItems);
+
+        return newState4;
     } else {
         return state;
     }

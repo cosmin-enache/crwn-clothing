@@ -15,11 +15,18 @@ const CollectionContainer = ({ collections, match }) => {
             {
                 foundCollection ? (
                     [ foundCollection ].map(props => (
-                        <Collection key={props.id} {...props} />
+                        <Collection
+                            key={props.id}
+                            {...props}
+                            />
                     ))
                 ) : (
                     collections.map(props => (
-                        <Collection key={props.id} {...props} />
+                        <Collection
+                            key={props.id}
+                            preview
+                            {...props}
+                            />
                     ))
                 )
             }
