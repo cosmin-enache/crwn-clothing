@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import GoogleAuthButton from "../google-auth-button/google-auth-button.component.jsx";
-import { auth, signInWithGoogle, signInWithEmailAndPassword } from "../../firebase/firebase.utils.js";
+import { signInWithGoogle, signInWithEmailAndPassword } from "../../firebase/firebase.utils.js";
 import { withRouter } from "react-router-dom";
 
 class SignIn extends React.Component {

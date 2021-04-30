@@ -1,13 +1,13 @@
 import React from "react";
 
 const CheckoutHeaderItem = ({ cartItem, reduceItemFromCart, addItemToCart, removeItemFromCart }) => {
-    const { id, name, quantity, price, imageUrl } = cartItem;
+    const { name, quantity, price, imageUrl } = cartItem;
 
     return (
         <tr>
             <td>
                 <div className="checkout-product-img-container">
-                    <img src={imageUrl} />
+                    <img src={imageUrl} alt="Checkout Product" />
                 </div>
             </td>
             <td>

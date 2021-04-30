@@ -13,7 +13,7 @@ const MenuItem = ({ title, layoutLarge, imageUrl, history, linkUrl }) => {
                 onClick={() => history.push("/shop/" + linkUrl)}
                 className={`menu-item ${layoutLarge && "lg"}`}
             >
-                <img src={imageUrl} />
+                <img src={imageUrl} alt="menu item" />
                 <div className="content">
                     <h1 className="title">{title}</h1>
                     <span className="sub-title">SHOP NOW</span>

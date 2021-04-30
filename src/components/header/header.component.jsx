@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { auth } from "../../firebase/firebase.utils.js";
 import { connect } from "react-redux";
 import CartIcon from "../cart-icon/cart-icon.component.jsx";

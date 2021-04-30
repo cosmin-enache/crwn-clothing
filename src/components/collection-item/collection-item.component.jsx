@@ -20,7 +20,7 @@ const CollectionItem = ({ addItemToCart, cartItems, ...itemData }) =>
                             () => addItemToCart({...itemData})
                         }
                         >ADD TO CART</button>
-                    <img className="bg-img" src={itemData.imageUrl} />
+                    <img className="bg-img" src={itemData.imageUrl} alt="background" />
                 </div>
                 <span className="name">{itemData.name}</span>
                 <span className="price">${itemData.price}</span>
