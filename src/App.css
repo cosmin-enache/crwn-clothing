@@ -173,6 +173,9 @@ h1 {
         opacity: 0.5; }
     #checkoutPage .checkout-header td .quantity-wrapper {
       position: relative; }
+      #checkoutPage .checkout-header td .quantity-wrapper .quantity {
+        position: relative;
+        left: 3px; }
       #checkoutPage .checkout-header td .quantity-wrapper .quantity-decrease, #checkoutPage .checkout-header td .quantity-wrapper .quantity-increase {
         position: absolute;
         top: 49px;
@@ -318,6 +321,8 @@ h1 {
 
   #homePage .dirMenu .menu-item.lg {
     padding: 60px; }
+  #homePage .dirMenu .menu-item > .content > .title {
+    font-weight: 500 !important; }
   #homePage .dirMenu .menu-item > .content > .sub-title {
     font-size: 1.4em !important; } }
 @media (min-width: 992px) {

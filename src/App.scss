@@ -240,6 +240,10 @@ h1 {
             }
             .quantity-wrapper {
                 position: relative;
+                .quantity {
+                    position: relative;
+                    left: 3px;
+                }
                 .quantity-decrease, .quantity-increase {
                     position: absolute;
                     top: 49px;
@@ -464,7 +468,7 @@ h1 {
                 }
                 > .content {
                     > .title {
-
+                        font-weight: 500 !important;
                     }
                     > .sub-title {
                         font-size: $sub-title-fs;
