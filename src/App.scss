@@ -225,7 +225,7 @@ h1 {
             top: 50%;
             text-align: left;
             font-size: 1.5em;
-            span {
+            span:not(.quantity-decrease, .quantity-increase, .quantity) {
                 position: relative;
                 top: calc(100px - 0.7em);
             }
@@ -239,16 +239,23 @@ h1 {
                 }
             }
             .quantity-wrapper {
-                position: relative;
+                display: flex;
+                margin: auto;
+                justify-content: space-around;
+                flex-direction: row;
+                width: 80px;
+                margin-top: 50px;
                 .quantity {
-                    position: relative;
-                    left: 8px !important;
+                    display: flex;
+                    top: 50px;
+                    align-self: center;
                 }
                 .quantity-decrease, .quantity-increase {
-                    position: absolute;
-                    top: 49px;
                     font-size: 2.5em;
                     cursor: pointer;
+                    align-self: center;
+                    margin-bottom: 12px;
+                    display: flex;
                     &:hover {
                         opacity: 0.8;
                     }
@@ -258,14 +265,11 @@ h1 {
                 }
                 .quantity-decrease {
                     content: "\2039";
-                    left: 58px;
                 }
                 .quantity-increase {
                     content: "\203A";
-                    left: 107px;
                 }
             }
-
         }
         th {
             text-align: left;
@@ -335,6 +339,7 @@ h1 {
         position: relative;
         .menu-item {
             position: relative;
+            display: flex;
             padding: 60px;
             border: 2px solid black;
             width: 100%;
@@ -364,6 +369,7 @@ h1 {
                 max-width: 170px;
                 margin: auto;
                 background: rgba(255, 255, 255, 0.65);
+                align-self: center;
                 > .title {
 
                 }
@@ -496,7 +502,6 @@ h1 {
                 > .content {
                     position: relative;
                     padding: 30px 20px 30px 20px;
-                    top: calc(50% - 55px);
                     > .sub-title {
                         font-size: $sub-title-fs;
                     }

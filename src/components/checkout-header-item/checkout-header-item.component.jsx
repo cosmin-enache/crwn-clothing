@@ -18,12 +18,14 @@ const CheckoutHeaderItem = ({ cartItem, reduceItemFromCart, addItemToCart, remov
                     <span
                         className="quantity-decrease"
                         onClick={() => reduceItemFromCart(cartItem)}
-                        >&lsaquo;</span>
+                        >&lsaquo;
+                    </span>
                     <span className="quantity">{quantity}</span>
                     <span
                         className="quantity-increase"
                         onClick={() => addItemToCart(cartItem)}
-                        >&rsaquo;</span>
+                        >&rsaquo;
+                    </span>
                 </div>
             </td>
             <td className="text-center">

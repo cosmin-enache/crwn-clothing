@@ -162,7 +162,7 @@ h1 {
     top: 50%;
     text-align: left;
     font-size: 1.5em; }
-    #checkoutPage .checkout-header td span {
+    #checkoutPage .checkout-header td span:not(.quantity-decrease, .quantity-increase, .quantity) {
       position: relative;
       top: calc(100px - 0.7em); }
     #checkoutPage .checkout-header td .remove-x {
@@ -172,25 +172,30 @@ h1 {
       #checkoutPage .checkout-header td .remove-x:active {
         opacity: 0.5; }
     #checkoutPage .checkout-header td .quantity-wrapper {
-      position: relative; }
+      display: flex;
+      margin: auto;
+      justify-content: space-around;
+      flex-direction: row;
+      width: 80px;
+      margin-top: 50px; }
       #checkoutPage .checkout-header td .quantity-wrapper .quantity {
-        position: relative;
-        left: 8px !important; }
+        display: flex;
+        top: 50px;
+        align-self: center; }
       #checkoutPage .checkout-header td .quantity-wrapper .quantity-decrease, #checkoutPage .checkout-header td .quantity-wrapper .quantity-increase {
-        position: absolute;
-        top: 49px;
         font-size: 2.5em;
-        cursor: pointer; }
+        cursor: pointer;
+        align-self: center;
+        margin-bottom: 12px;
+        display: flex; }
         #checkoutPage .checkout-header td .quantity-wrapper .quantity-decrease:hover, #checkoutPage .checkout-header td .quantity-wrapper .quantity-increase:hover {
           opacity: 0.8; }
         #checkoutPage .checkout-header td .quantity-wrapper .quantity-decrease:active, #checkoutPage .checkout-header td .quantity-wrapper .quantity-increase:active {
           opacity: 0.5; }
       #checkoutPage .checkout-header td .quantity-wrapper .quantity-decrease {
-        content: "\2039";
-        left: 58px; }
+        content: "\2039"; }
       #checkoutPage .checkout-header td .quantity-wrapper .quantity-increase {
-        content: "\203A";
-        left: 107px; }
+        content: "\203A"; }
   #checkoutPage .checkout-header th {
     text-align: left;
     font-size: 1.8em;
@@ -241,6 +246,7 @@ h1 {
   position: relative; }
   #homePage .dirMenu .menu-item {
     position: relative;
+    display: flex;
     padding: 60px;
     border: 2px solid black;
     width: 100%;
@@ -265,7 +271,8 @@ h1 {
       padding: 20px;
       max-width: 170px;
       margin: auto;
-      background: rgba(255, 255, 255, 0.65); }
+      background: rgba(255, 255, 255, 0.65);
+      align-self: center; }
       #homePage .dirMenu .menu-item > .content > .sub-title {
         font-size: 1.4em !important;
         letter-spacing: 2px;
@@ -336,8 +343,7 @@ h1 {
       padding: 100px; }
     #homePage .dirMenu .menu-item > .content {
       position: relative;
-      padding: 30px 20px 30px 20px;
-      top: calc(50% - 55px); }
+      padding: 30px 20px 30px 20px; }
       #homePage .dirMenu .menu-item > .content > .sub-title {
         font-size: 1.4em !important; } }
 @media (min-width: 1200px) {
